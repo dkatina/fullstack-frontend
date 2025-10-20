@@ -4,3 +4,23 @@ ToDO:
 Fix bad loggin
 Loggin reroute
 When adding album, remove from spotify list
+
+
+What I have: I have a List of albums in my database, including the album id, I also have the artists id
+
+
+Plan for today
+
+- View?
+- Navigation
+
+
+
+
+
+
+
+
+
+
+- finished page
