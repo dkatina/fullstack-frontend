@@ -19,7 +19,6 @@ const LoginView = () => {
             <input type="email" placeholder='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
             <input type="password" placeholder='password' name='password' value={password} onChange={(e)=>setPassword(e.target.value)}/>
             <button type="submit">Submit</button>
-            <p>{user.email}</p>
         </form>
     </div>
   )

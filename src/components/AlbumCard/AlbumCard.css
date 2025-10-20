@@ -1,0 +1,19 @@
+
+.AlbumCardContainer {
+    display: flex;
+    padding: 10px;
+    width: 30vw;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 1vh;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+.AlbumCover {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    border-radius: 50px;
+
+}

@@ -1,0 +1,19 @@
+
+.AlbumList{
+    
+    width: 35vw;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    overflow-y: scroll;
+    
+}
+
+.AlbumListContainer{
+    width: 35vw;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(234, 234, 234);
+}

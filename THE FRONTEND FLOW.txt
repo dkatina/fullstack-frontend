@@ -1,0 +1,6 @@
+
+ToDO:
+
+Fix bad loggin
+Loggin reroute
+When adding album, remove from spotify list

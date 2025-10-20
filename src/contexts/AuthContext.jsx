@@ -9,13 +9,39 @@ export const useAuth = () => {
     return context
 }
 
-const API_URL = 'http://127.0.0.1:5000'
+const API_URL = import.meta.env.VITE_API_URL
+const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID
+const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET
+const artist_id = '2cTWfmhgzCiU5JWCcePyii'
 
 
 //Create the Context Provider (wrapper that I will place over my app)
 export const AuthProvider = ({ children }) =>{
     const [user, setUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null) //user will be an object in JSON
     const [token, setToken] =useState(localStorage.getItem('token') || null)
+
+    const [spotifyToken, setSpotifyToken] = useState(localStorage.getItem('spotifyToken') || null)
+    const [myAlbums, setMyAlbums] = useState([])
+
+    useEffect (()=>{
+        const getSpotToken = async () =>{
+            console.log('getting token')
+            fetch('https://accounts.spotify.com/api/token', {
+            method: 'POST',
+            body: 'grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + client_secret,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+            })
+            .then(r => r.json())
+            .then(r => {
+                setSpotifyToken(r.access_token)
+                localStorage.setItem('spotifyToken', r.access_token)
+            })
+        };
+
+        getSpotToken()
+    }, []) //With an empty dependency array this will only run on mount
 
 
 
@@ -49,7 +75,11 @@ export const AuthProvider = ({ children }) =>{
     const value = {
         token,
         user,
-        login
+        login,
+        spotifyToken,
+        artist_id,
+        myAlbums,
+        setMyAlbums
     }
 
     return (
