@@ -3,7 +3,10 @@ ToDO:
 
 Fix bad loggin
 Loggin reroute
+delete my albums
 When adding album, remove from spotify list
+add limit to stored albums
+break up my contexts
 
 
 What I have: I have a List of albums in my database, including the album id, I also have the artists id
@@ -11,16 +14,17 @@ What I have: I have a List of albums in my database, including the album id, I a
 
 Plan for today
 
-- View?
-- Navigation
+- View? -
+- Navigation -
+- Api call to get my albums (Doing this on App load aka in context) -
+- Do an API call to spotify for each individual album's song(s) information
+    - On mount to page we get all of the albums' info
+        - create a function to do an API call for an individual album -
+        - for each album call that function
 
-
-
-
-
-
-
-
-
+   
+- Go through my album info 
+- Make a card for each album
+    - Card can predisplay song info
 
 - finished page

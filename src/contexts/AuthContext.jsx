@@ -38,6 +38,19 @@ export const AuthProvider = ({ children }) =>{
                 setSpotifyToken(r.access_token)
                 localStorage.setItem('spotifyToken', r.access_token)
             })
+
+            //Getting all of my albums from my API
+            const response2 = await fetch(API_URL+'/collections', {
+                method:'GET',
+                headers:{
+                    'Authorization': 'Bearer '+ token
+                }
+            })
+
+            const data2 = await response2.json()
+            console.log(data2)
+            setMyAlbums(data2)
+
         };
 
         getSpotToken()
