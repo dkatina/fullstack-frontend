@@ -3,10 +3,13 @@ ToDO:
 
 Fix bad loggin
 Loggin reroute
+Fix loading my albums on Home page mount
+
 delete my albums
 When adding album, remove from spotify list
 add limit to stored albums
 break up my contexts
+Add Artist Name and Track Count to Album info
 
 
 What I have: I have a List of albums in my database, including the album id, I also have the artists id

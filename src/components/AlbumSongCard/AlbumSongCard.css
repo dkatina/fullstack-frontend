@@ -1,0 +1,33 @@
+
+
+.albumSongCard {
+    width: 90vw;
+    max-width: 800px;
+    min-width: 600px;
+    margin: 0 auto 2vh auto;
+    border-radius: 10px;
+}
+
+.albumTop {
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: rgba(33, 35, 38, 0.288) 0px 10px 10px -10px;
+}
+
+.albumLogo {
+    width: 15%;
+    border-radius: 10px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 6px;
+    margin-left: 1vw
+}
+
+
