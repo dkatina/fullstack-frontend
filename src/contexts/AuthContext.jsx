@@ -19,7 +19,7 @@ const artist_id = '2cTWfmhgzCiU5JWCcePyii'
 export const AuthProvider = ({ children }) =>{
     const [user, setUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null) //user will be an object in JSON
     const [token, setToken] =useState(localStorage.getItem('token') || null)
-
+    const [spotifyAlbums, setSpotifyAlbums] = useState([])
     const [spotifyToken, setSpotifyToken] = useState(localStorage.getItem('spotifyToken') || null)
     const [myAlbums, setMyAlbums] = useState([])
 
@@ -51,6 +51,21 @@ export const AuthProvider = ({ children }) =>{
             console.log(data2)
             setMyAlbums(data2)
 
+            //Getting Spotify Albums
+            const response3 = await fetch(`https://api.spotify.com/v1/artists/${artist_id}/albums`, {
+                method:'GET',
+                headers:{
+                    'Authorization': 'Bearer '+ spotifyToken
+                }
+                })
+
+            const data = await response3.json()
+            console.log(data.items)
+            setSpotifyAlbums(data.items)
+
+
+            
+
         };
 
         getSpotToken()
@@ -77,12 +92,15 @@ export const AuthProvider = ({ children }) =>{
         }
 
         const data = await response.json()// translating to js
-        console.log('response data')
         console.log(data)
+        if ('error' in data){ //checking the login response for an error from my backend
+            return false
+        }
         setUser(data.user)
         setToken(data.token)
         localStorage.setItem('user', JSON.stringify(data.user))
         localStorage.setItem('token', data.token)
+        return true
     }
 
     const value = {
@@ -92,7 +110,9 @@ export const AuthProvider = ({ children }) =>{
         spotifyToken,
         artist_id,
         myAlbums,
-        setMyAlbums
+        setMyAlbums,
+        spotifyAlbums,
+        setSpotifyAlbums
     }
 
     return (

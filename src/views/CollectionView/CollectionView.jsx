@@ -6,30 +6,30 @@ import './CollectionView.css'
 
 const CollectionView = () => {
     const API_URL = import.meta.env.VITE_API_URL
-    const { spotifyToken, artist_id, token, setMyAlbums, myAlbums } = useAuth()
-    const [spotifyAlbums, setSpotifyAlbums] = useState([])
+    const { spotifyToken, artist_id,  myAlbums, spotifyAlbums } = useAuth()
+    // const [spotifyAlbums, setSpotifyAlbums] = useState([])
     
 
-    useEffect (()=>{
-        // Getting all available albums from spotify
-        const getArtistAlbums = async () =>{
-        const response = await fetch(`https://api.spotify.com/v1/artists/${artist_id}/albums`, {
-            method:'GET',
-            headers:{
-                'Authorization': 'Bearer '+ spotifyToken
-            }
-        })
+    // useEffect (()=>{
+    //     // Getting all available albums from spotify
+    //     const getArtistAlbums = async () =>{
+    //     const response = await fetch(`https://api.spotify.com/v1/artists/${artist_id}/albums`, {
+    //         method:'GET',
+    //         headers:{
+    //             'Authorization': 'Bearer '+ spotifyToken
+    //         }
+    //     })
 
-        const data = await response.json()
-        console.log(data.items)
-        setSpotifyAlbums(data.items)
+    //     const data = await response.json()
+    //     console.log(data.items)
+    //     setSpotifyAlbums(data.items)
 
         
-        }
+    //     }
 
-        getArtistAlbums();
+    //     getArtistAlbums();
 
-    }, []) //Empty Dependency Array to only run this on MOUNT
+    // }, []) //Empty Dependency Array to only run this on MOUNT
 
   return (
     <div id="CollectionView">

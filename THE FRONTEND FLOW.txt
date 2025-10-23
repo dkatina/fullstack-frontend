@@ -1,15 +1,15 @@
 
 ToDO:
 
-Fix bad loggin
-Loggin reroute
-Fix loading my albums on Home page mount
+X - Fix bad loggin
+X - Loggin reroute
+X - Fix loading my albums on Home page mount
 
-delete my albums
-When adding album, remove from spotify list
-add limit to stored albums
+X - delete my albums
+X - When adding album, remove from spotify list
+X - add limit to stored albums
 break up my contexts
-Add Artist Name and Track Count to Album info
+X - Add Artist Name and Track Count to Album info (Make my db data look like spotify's data)
 
 
 What I have: I have a List of albums in my database, including the album id, I also have the artists id
