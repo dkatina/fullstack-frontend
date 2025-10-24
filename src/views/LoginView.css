@@ -1,0 +1,95 @@
+:root{
+  --bg-dark: #1a1a1a; /* matches index.css rgb(26,26,26) */
+  --bg-mid: #2b2b2b;  /* matches rgba(43,43,43,1) */
+  --bg-light: #414141; /* matches rgb(65,65,65) */
+  --text: #e6e6e6;
+  --muted: #bdbdbd;
+  --accent: #636363;
+  --card-bg: rgba(255,255,255,0.02);
+}
+
+.login-container{
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: transparent; /* overall background comes from global index.css */
+}
+
+.login-card{
+  width: 360px;
+  max-width: calc(100% - 48px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 28px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  color: var(--text);
+}
+
+.login-title{
+  font-size: 1.25rem;
+  margin: 0 0 16px 0;
+  color: var(--text);
+  text-align: center;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-label{ display:block; }
+
+.login-input{
+  width: 92%;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.login-input::placeholder{ color: rgba(255,255,255,0.45); }
+
+.login-input:focus{
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.07);
+}
+
+.login-button{
+  margin-top: 6px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--accent), #b8b8b8);
+  color: #1c1c1d;
+  font-weight: 600;
+  font-size: 0.98rem;
+  box-shadow: 0 6px 14px rgba(233, 233, 233, 0.12);
+  transition: transform .08s ease, box-shadow .12s ease, filter .08s ease;
+}
+
+.login-button:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+.login-button:active{ transform: translateY(0); }
+
+.login-error{
+  margin-top: 12px;
+  color: #ff6b6b;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.visually-hidden{ position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+
+@media (max-width: 420px){
+  .login-card{ padding: 20px; border-radius: 10px; }
+  .login-title{ font-size: 1.1rem; }
+}

@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) =>{
 
     useEffect (()=>{
         const getSpotToken = async () =>{
-            console.log('getting token')
+          
             fetch('https://accounts.spotify.com/api/token', {
             method: 'POST',
             body: 'grant_type=client_credentials&client_id=' + client_id + '&client_secret=' + client_secret,
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) =>{
             })
 
             const data2 = await response2.json()
-            console.log(data2)
+            
             setMyAlbums(data2)
 
             //Getting Spotify Albums
@@ -60,7 +60,7 @@ export const AuthProvider = ({ children }) =>{
                 })
 
             const data = await response3.json()
-            console.log(data.items)
+           
             setSpotifyAlbums(data.items)
 
 

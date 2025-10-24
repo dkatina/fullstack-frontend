@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { useState, useEffect } from 'react'
+import './AddAlbum.css'
 
 const AddAlbum = ({ album }) => {
     const API_URL = import.meta.env.VITE_API_URL
@@ -51,7 +52,7 @@ const AddAlbum = ({ album }) => {
 
   return (
 
-      <button onClick={()=>addAlbum()}>Add Album</button> 
+      <button className='MyBtn' onClick={()=>addAlbum()}>Add Album</button> 
   
 
   )

@@ -17,3 +17,8 @@
     border-radius: 50px;
 
 }
+
+.AlbumCardInfo {
+    display: flex;
+    align-items: center;
+}

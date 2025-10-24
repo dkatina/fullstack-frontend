@@ -2,11 +2,14 @@
 .AlbumCardContainer {
     display: flex;
     padding: 10px;
-    width: 30vw;
+    width: 90%;
     align-items: center;
     border-radius: 10px;
     margin-bottom: 1vh;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(59, 59, 59, 0.2) 0px 8px 24px;
+    background-color: rgb(39, 39, 39);
+    color: rgb(196, 196, 196);
+    justify-content: space-between
 
 }
 
@@ -16,4 +19,9 @@
     margin-right: 10px;
     border-radius: 50px;
 
+}
+
+.AlbumCardInfo {
+    display: flex;
+    align-items: center;
 }

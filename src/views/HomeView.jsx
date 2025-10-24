@@ -3,6 +3,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { useEffect} from 'react' 
 import AlbumSongCard from '../components/AlbumSongCard/AlbumSongCard';
 import { motion, AnimatePresence } from 'framer-motion';
+import './HomeView.css';
 
 const HomeView = () => {
   const { myAlbums, spotifyToken  } = useAuth();
@@ -30,9 +31,9 @@ const HomeView = () => {
   }
 
   useEffect (()=>{
-    console.log("Loading")
+   
     const getAllAlbums = async () => {
-      console.log(myAlbums)
+     
     if (myAlbums.length > 0) {
   
       const results = await Promise.all(
@@ -48,7 +49,7 @@ const HomeView = () => {
       }
 
       setAlbumSongs(tempAlbumSongs)
-      console.log('Fetched:', tempAlbumSongs)
+      
     }
     };
 
@@ -58,22 +59,25 @@ const HomeView = () => {
   //<AlbumSongCard  key={idx} albumSong={albumSong}/>
   return (
     <div>
-      <h1>HOME</h1>
-      <hr style={{width: "90%", margin: '0 auto', backgroundColor: 'black', border: 'none', height: '2px'}}/>
+      <div id="hero">
+        <img src="https://i.scdn.co/image/ab6761610000517418cbd8d2e0377739c2dfa1fc" alt="West Main" />
+        <h1>West Main Music</h1>
+      </div>
+      
       <div 
         className='myLinks'
         style={{
           display: 'flex',
-          justifyContent:'space-evenly',
           width: '90%',
-          margin: '1vh auto'
+          margin: '1vh auto',
+          justifyContent: 'space-between'
         }}>
         {links.map((link, idx)=>(
           <a key={idx} href={link[0]}><img  style={{background: 'rgba(99, 99, 99, 1)', borderRadius: "50px", padding: '7px', overflow: 'visible'}}width="50" height="50" src={link[1]} alt="instagram-new--v1"/></a>
         ))}
       </div>
       <hr style={{width: "90%", margin: '0 auto', backgroundColor: 'black', border: 'none', height: '2px', marginBottom: '4vh'}}/>
-      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '20px'}}>
+      <div style={{display: 'flex', overflowX: 'scroll', alignItems: 'center', gap: '20px', paddingLeft: "20px"}}>
         {albumSongs?.map(( albumSong, idx)=>(
           <motion.div
             key={idx}

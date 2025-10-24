@@ -33,7 +33,9 @@ const CollectionView = () => {
 
   return (
     <div id="CollectionView">
+        <h1>Available Albums</h1>
         <AlbumList albums={spotifyAlbums} type='spotify'/>
+        <h1>Your Showcase</h1>
         <AlbumList albums={myAlbums} type='myalbums'/>
     </div>
   )

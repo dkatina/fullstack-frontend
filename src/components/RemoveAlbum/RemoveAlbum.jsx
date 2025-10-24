@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { useState, useEffect } from 'react'
+import '../AddSong/addAlbum.css'
 
 const RemoveAlbum = ({ album }) => {
     const [clicked, setClicked] = useState(false)
@@ -32,7 +33,7 @@ const RemoveAlbum = ({ album }) => {
 
 
   return (
-    <button onClick={()=>removeAlbum()}>Remove</button>
+    <button className={"MyBtn"} onClick={()=>removeAlbum()}>Remove</button>
   )
 }
 
