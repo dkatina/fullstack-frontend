@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { useState, useEffect } from 'react'
-import '../AddSong/addAlbum.css'
+import '../AddSong/AddAlbum.css'
 
 const RemoveAlbum = ({ album }) => {
     const [clicked, setClicked] = useState(false)
