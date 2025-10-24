@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { useState, useEffect } from 'react'
-import AlbumList from '../../components/Albumlist/AlbumList'
+import AlbumList from '../../components/AlbumList/AlbumList'
 import './CollectionView.css'
 
 const CollectionView = () => {
